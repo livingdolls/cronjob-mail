@@ -8,7 +8,7 @@ import { sendMail } from "./mail";
 
 // Check User dengan status pending Cron Job
 export const CheckUserCron = async () => {
-	cron.schedule("* * * * * *", async () => {
+	cron.schedule("*/10 * * * * *", async () => {
 		const res = await CheckStatusUser();
 
 		if (res.length === 0) {

@@ -1,0 +1,44 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id_user  String   @id @default(uuid())
+  email    String   @unique
+  password String
+  status   String
+  mailer   Mailer?
+  wallet   Wallet[]
+}
+
+model Mailer {
+  id_mailer String @id @default(uuid())
+  user      User   @relation(fields: [userId], references: [id_user], onDelete: Cascade)
+  userId    String @unique
+  email     String
+  pin       String @unique
+  status    String
+}
+
+model Wallet {
+  id_wallet String    @id @default(uuid())
+  idUser    String
+  user      User      @relation(fields: [idUser], references: [id_user])
+  currency  Currency?
+  amount    Int
+}
+
+model Currency {
+  id_currency String @id @default(uuid())
+  currency    String
+  walletId    String @unique
+  wallet      Wallet @relation(fields: [walletId], references: [id_wallet])
+}

@@ -1,0 +1,53 @@
+POST http://localhost:3001/api/auth/signUp
+Content-Type: application/json
+
+{
+    "email" : "nanangheartache@gmail.com",
+    "password" : "123456"
+}
+
+###
+PUT http://localhost:3001/api/auth/2e32ece3-cf36-4a45-b2ba-70fd4cd5e4f0/verify/noKgBUSHBC7e
+
+###
+DELETE http://localhost:3001/api/auth/del
+
+###
+# PUT http://localhost:3001/api/auth/996bcfda-da14-43a6-9832-bc9ee438444b/verify/WlcOHKcP6wkV
+PUT http://localhost:3001/api/auth/cfdb797a-05a5-4fbc-8730-cdfa2e3b45f5/verify/59VNIL0Zf7bL
+
+###
+PUT http://localhost:3001/api/auth/change-email/705f8dab-ac34-4916-b9b8-f45079b65c5c
+Content-Type: application/json
+
+{
+    "email" : "nanangsetyo20@gmail.com"
+}
+
+###
+# PUT http://localhost:3001/api/auth/change-email/verivy/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF91c2VyIjoiY2ZkYjc5N2EtMDVhNS00ZmJjLTg3MzAtY2RmYTJlM2I0NWY1IiwicGluIjoiS09TWTE5Q0NSOWNVIiwibmV3RW1haWwiOiJuYW5hbmdzZXR5bzIwQGdtYWlsLmNvbSJ9.nyMRsY9OfbHuMfblZPCXXWCWparvoa7lmcVLvJOCUFU
+PUT http://localhost:3001/api/auth/change-email/verivy/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF91c2VyIjoiNzA1ZjhkYWItYWMzNC00OTE2LWI5YjgtZjQ1MDc5YjY1YzVjIiwicGluIjoibUlya2I1SXQ0T3pVIiwibmV3RW1haWwiOiJuYW5hbmdzZXR5bzIwQGdtYWlsLmNvbSJ9.JLnXmAdM4Lro9rNwWU5G55nbf4FCRxFO0bZ79ZZz63E
+
+
+# Login API
+###
+POST http://localhost:3001/api/auth/sign
+Content-Type: application/json
+
+{
+    "email" : "nanangheartache@gmail.com",
+    "password" : "123456"
+}
+
+# eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIyZTMyZWNlMy1jZjM2LTRhNDUtYjJiYS03MGZkNGNkNWU0ZjAiLCJwaW4iOiJub0tnQlVTSEJDN2UiLCJzdHR1cyI6InZlcmlmZWQifQ.r63TQLZvrPZgoy4StjnGbr7b0rEeUwA4gyQ3LQVHJlo
+
+###
+POST http://localhost:3001/api/wallet/
+Content-Type: application/json
+
+{
+    "amount" : 20000000
+}
+
+###
+GET http://localhost:3001/api/wallet/

@@ -3,8 +3,8 @@ import mail from "nodemailer";
 const transport = mail.createTransport({
 	service: "gmail",
 	auth: {
-		user: "yasare12x@gmail.com",
-		pass: "oyzhvccmrtqkgsdj",
+		user: process.env.MAIL_GOOGLE || "yasare12x@gmail.com",
+		pass: process.env.MAIL_PASS || "oyzhvccmrtqkgsdj",
 	},
 });
 

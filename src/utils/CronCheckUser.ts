@@ -6,7 +6,7 @@ import {
 } from "../services/Auth.service";
 import { sendMail } from "./mail";
 
-// Check User dengan status pending Cron Job
+// Check User dengan status pending Cron Job setiap 10s
 export const CheckUserCron = async () => {
 	cron.schedule("*/10 * * * * *", async () => {
 		const res = await CheckStatusUser();
@@ -42,9 +42,10 @@ export const SendEmailVerification = async (id: any, pin: any, mail: any) => {
 	}
 };
 
-// CronJob Set Expired Pin
+// CronJob Set Expired Pin setelah 1jam
 export const CheckExpiredPinCronJob = async (idUser: any, pin: any) => {
-	cron.schedule("*/59 10 * * * *", async () => {
+	// cron job menit 59 setiap 1 jam
+	cron.schedule("59 */1 * * *", async () => {
 		const setExpired = await ExpiredPinService(idUser, pin);
 		console.log(setExpired);
 		console.log("Pin expired Untuk user = ", idUser);

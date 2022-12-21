@@ -44,8 +44,8 @@ export const SendEmailVerification = async (id: any, pin: any, mail: any) => {
 
 // CronJob Set Expired Pin setelah 1jam
 export const CheckExpiredPinCronJob = async (idUser: any, pin: any) => {
-	// cron job menit 59 setiap 1 jam
-	cron.schedule("59 */1 * * *", async () => {
+	// cron job menit 1 setiap 1 jam
+	cron.schedule("1 */1 * * *", async () => {
 		const setExpired = await ExpiredPinService(idUser, pin);
 		console.log(setExpired);
 		console.log("Pin expired Untuk user = ", idUser);
